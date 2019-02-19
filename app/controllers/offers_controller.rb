@@ -6,7 +6,8 @@ class OffersController < ApplicationController
     @users = User.all
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @offer = Offer.new
@@ -14,6 +15,7 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
+    @offer.teacher = current_user
     if @offer.save
       redirect_to offer_path(@offer)
     else
@@ -21,14 +23,17 @@ class OffersController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     @offer.update(offer_params)
+    redirect_to @offer
   end
 
   def destroy
     @offer.destroy
+    redirect_to offers_path
   end
 
   private
