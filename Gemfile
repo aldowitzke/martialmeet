@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
+# handles authorization policy
+gem 'pundit'
 gem 'faker'
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
