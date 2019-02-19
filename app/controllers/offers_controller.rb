@@ -3,6 +3,7 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
+    @users = User.all
   end
 
   def show; end
