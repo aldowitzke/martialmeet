@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   # delete 'offers/destroy', to: 'offers#destroy'
 
   resources :offers
+  get 'your_classes', to: 'offers#specific'
+  delete 'offers/:id/destroy_specific', to: 'offers#destroy_specific', as: 'destroy_specific'
 
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
