@@ -1,5 +1,5 @@
 class OffersController < ApplicationController
-  before_action :set_offer, only: [:show, :edit, :update, :destroy]
+  before_action :set_offer, only: [:show, :edit, :update, :destroy, :destroy_specific]
   # permit non-user to see the index
   skip_before_action :authenticate_user!, only: :index
 
@@ -46,6 +46,11 @@ class OffersController < ApplicationController
   def specific
     @offers = policy_scope(Offer).where(teacher: current_user)
     authorize @offers
+  end
+
+  def destroy_specific
+    @offer.destroy
+    redirect_to your_classes_path
   end
 
   private

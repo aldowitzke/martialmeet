@@ -35,5 +35,9 @@ class OfferPolicy < ApplicationPolicy
     true
   end
 
+  def destroy_specific?
+    destroy?
+  end
+
 
 end

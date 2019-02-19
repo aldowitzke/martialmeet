@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :offers
   get 'your_classes', to: 'offers#specific'
+  delete 'offers/:id/destroy_specific', to: 'offers#destroy_specific', as: 'destroy_specific'
 
   devise_for :users
   root to: 'pages#home'
