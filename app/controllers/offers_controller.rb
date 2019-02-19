@@ -13,8 +13,9 @@ class OffersController < ApplicationController
   end
 
   def new
+    current_user.teacher
     @offer = Offer.new
-    # authorize access to offers/new page for all users
+      # authorize access to offers/new page for all users
     authorize @offer
   end
 
