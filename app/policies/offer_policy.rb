@@ -31,5 +31,9 @@ class OfferPolicy < ApplicationPolicy
     record.teacher == user
   end
 
+  def specific?
+    true
+  end
+
 
 end

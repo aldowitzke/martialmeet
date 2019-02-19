@@ -1,0 +1,11 @@
+<h1>Your classes!</h1>
+
+<% @offers.each do |offer| %>
+<h3><%= offer.title%></h3>
+<p>Fight mode: <%= offer.fight_model %>
+<p>Description: <%= offer.description %></p>
+<p>Address: <%= offer.address %></p>
+<p>Date: <%= offer.datetime %></p>
+<p>Your price: R$<%= offer.price %></p>
+<% end %>
+

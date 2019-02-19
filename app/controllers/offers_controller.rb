@@ -43,6 +43,11 @@ class OffersController < ApplicationController
     redirect_to offers_path
   end
 
+  def specific
+    @offers = policy_scope(Offer).where(teacher: current_user)
+    authorize @offers
+  end
+
   private
 
   def set_offer
