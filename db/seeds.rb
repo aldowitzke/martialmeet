@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts 'Creating. . .'
+15.times do
+  p "creating one"
+  Offer.create(
+    fight_model: Faker::Games::LeagueOfLegends.champion,
+    description: Faker::Book.genre,
+    address: Faker::Address.street_name,
+    price: Faker::Number.between(50, 100),
+    teacher_id: 1,
+    title: Faker::Book.title
+    )
+  p "created one"
+end
+puts 'Done'

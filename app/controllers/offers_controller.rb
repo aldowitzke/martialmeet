@@ -6,6 +6,7 @@ class OffersController < ApplicationController
   def index
     @offers = policy_scope(Offer)
     @offers = Offer.all
+    @users = User.all
   end
 
   def show
@@ -20,6 +21,7 @@ class OffersController < ApplicationController
   def create
     # check if authorize @offer is needed for create (scope)
     @offer = Offer.new(offer_params)
+    @offer.teacher = current_user
     authorize @offer
     if @offer.save
       redirect_to offer_path(@offer)
@@ -29,21 +31,23 @@ class OffersController < ApplicationController
   end
 
   def edit
-    authorize @offer
   end
 
   def update
     @offer.update(offer_params)
+    redirect_to @offer
   end
 
   def destroy
     @offer.destroy
+    redirect_to offers_path
   end
 
   private
 
   def set_offer
     @offer = Offer.find(params[:id])
+    authorize @offer
   end
 
   def offer_params

@@ -13,18 +13,22 @@ class OfferPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    true
+  end
+
   def edit?
     update?
   end
 
   def update?
     # if user created, returns true, authorize
-    record.user == user
+    record.teacher == user
   end
 
   def destroy?
     # if user created, returns true, authorize
-    record.user == user
+    record.teacher == user
   end
 
 
