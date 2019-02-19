@@ -1,18 +1,26 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
+  # permit non-user to see the index
+  skip_before_action :authenticate_user!, only: :index
 
   def index
+    @offers = policy_scope(Offer)
     @offers = Offer.all
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @offer = Offer.new
+    # authorize access to offers/new page for all users
+    authorize @offer
   end
 
   def create
+    # check if authorize @offer is needed for create (scope)
     @offer = Offer.new(offer_params)
+    authorize @offer
     if @offer.save
       redirect_to offer_path(@offer)
     else
@@ -20,7 +28,9 @@ class OffersController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @offer
+  end
 
   def update
     @offer.update(offer_params)
