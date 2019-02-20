@@ -1,5 +1,5 @@
 class OffersController < ApplicationController
-  before_action :set_offer, only: [:show, :edit, :update, :destroy, :destroy_specific]
+  before_action :set_offer, only: [:show, :edit, :update, :destroy, :destroy_specific, :join_offer]
   # permit non-user to see the index
   skip_before_action :authenticate_user!, only: [:index, :show]
 
@@ -39,6 +39,11 @@ class OffersController < ApplicationController
     redirect_to @offer
   end
 
+  def join_offer
+    @offer.update(student_id: current_user.id)
+    redirect_to @offer
+  end
+
   def destroy
     @offer.destroy
     redirect_to offers_path
@@ -62,6 +67,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :fight_model, :description, :address, :datetime, :price)
+    params.require(:offer).permit(:title, :fight_model, :description, :address, :datetime, :price, :student_id)
   end
 end

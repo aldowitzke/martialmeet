@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'your_classes', to: 'offers#specific'
   delete 'offers/:id/destroy_specific', to: 'offers#destroy_specific', as: 'destroy_specific'
 
+  patch 'offers/:id', to: 'offers#join_offer', as: 'join_offer'
+
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

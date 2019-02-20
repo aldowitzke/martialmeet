@@ -8,3 +8,7 @@
 <%= link_to "Edit", edit_offer_path(@offer)  %>
 
 <%= link_to "Delete", offer_path(@offer), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }  %>
+
+<%= link_to join_offer_path do %>
+  <i class="fas fa-sign-in-alt"></i>
+<% end %>
