@@ -1,0 +1,49 @@
+.the-card {
+  background-color: gray;
+  margin: 15px;
+  width: 35rem;
+  height: 25rem;
+  min-height: 5rem;
+  flex: 1 0 21%;
+  border-radius: 5px;
+  position: relative;
+}
+
+.the-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.the-container h1 {
+  font-size: 30px;
+}
+
+.title {
+  margin-left: 15px;
+  width: 60%;
+}
+
+.description{
+  position: absolute;
+  margin-left: 15px;
+}
+
+.price {
+  position: absolute;
+  bottom: 9px;
+  left:16px;
+}
+
+.offer {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+}
+.photo {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+}

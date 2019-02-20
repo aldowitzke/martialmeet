@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
-gem 'dotenv-rails', groups: [:development, :test]
+# gems for uploading pictures
 gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
+
+# handles authorization policy
+gem 'pundit'
 gem 'faker'
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
