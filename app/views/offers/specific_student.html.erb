@@ -10,13 +10,6 @@
 <p>Your price: R$<%= offer.price %></p>
 
 <%= link_to "Unjoin", unjoin_offer_path(offer, origin: 'my_classes'), method: :patch, data: { confirm: 'Are you sure?'} %><br><br>
- <%= link_to edit_offer_path(offer) do %>
-  <i class="fas fa-edit"></i>
-<% end %>
-
-<%= link_to destroy_specific_path(offer), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } do %>
-    <i class="fas fa-trash-alt"></i>
-<% end %> -->
 
 <% end %>
 
