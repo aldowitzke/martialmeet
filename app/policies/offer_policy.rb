@@ -39,5 +39,7 @@ class OfferPolicy < ApplicationPolicy
     destroy?
   end
 
-
+  def join?
+    true
+  end
 end
