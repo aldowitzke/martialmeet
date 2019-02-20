@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :offers do
     member do
       patch 'join'
+      patch 'unjoin'
     end
   end
 
