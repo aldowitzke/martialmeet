@@ -5,10 +5,14 @@
 <p><%= @offer[:price] %></p>
 <p><%= @offer.teacher.email %></p>
 
-
-<%= link_to "Edit", edit_offer_path(@offer)  %>
-
-<%= link_to "Delete", offer_path(@offer), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }  %>
+<% if @offer.teacher == current_user  %>
+  <%= link_to edit_offer_path(@offer) do %>
+    <i class="fas fa-edit"></i>
+  <% end %>
+  <%= link_to destroy_specific_path(@offer), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } do %>
+      <i class="fas fa-trash-alt"></i>
+  <% end %>
+<% end %>
 
 <%= offer_status_icon %>
 
