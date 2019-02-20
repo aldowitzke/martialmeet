@@ -19,3 +19,4 @@
 <% if @offer.student == current_user %>
   <%= link_to "Unjoin class", unjoin_offer_path(@offer, origin: 'show'), method: :patch %>
 <% end %>
+
