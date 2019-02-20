@@ -5,7 +5,8 @@ class OffersController < ApplicationController
 
   def index
     @offers = policy_scope(Offer)
-    @offers = Offer.all
+    @offers = Offer.where(student: nil)
+    # @offers = Offer.all
     @users = User.all
   end
 
