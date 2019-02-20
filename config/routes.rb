@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'your_classes', to: 'offers#specific'
   delete 'offers/:id/destroy_specific', to: 'offers#destroy_specific', as: 'destroy_specific'
 
+  get 'student_classes', to: 'offers#specific_student'
+
   # patch 'offers/:id/join_offer', to: 'offers#join_offer', as: 'join_offer'
 
   devise_for :users
