@@ -42,4 +42,8 @@ class OfferPolicy < ApplicationPolicy
   def join?
     true
   end
+
+  def unjoin?
+    record.student == user
+  end
 end

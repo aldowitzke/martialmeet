@@ -1,5 +1,5 @@
 class OffersController < ApplicationController
-  before_action :set_offer, only: [:show, :edit, :update, :destroy, :destroy_specific, :join]
+  before_action :set_offer, only: [:show, :edit, :update, :destroy, :destroy_specific, :join, :unjoin]
   # permit non-user to see the index
   skip_before_action :authenticate_user!, only: [:index, :show]
 
@@ -41,6 +41,11 @@ class OffersController < ApplicationController
 
   def join
     @offer.update(student: current_user)
+    redirect_to @offer
+  end
+
+  def unjoin
+    @offer.update(student: nil)
     redirect_to @offer
   end
 
