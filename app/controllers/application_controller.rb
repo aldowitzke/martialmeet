@@ -18,7 +18,8 @@ class ApplicationController < ActionController::Base
 
   # allows costumized strong params for user on DB
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :city, :teacher])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :city, :teacher, :photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:photo])
   end
 
   private
