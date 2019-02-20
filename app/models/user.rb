@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :teacher_offers, class_name: 'Offer', foreign_key: :teacher_id
   has_many :student_offers, class_name: 'Offer', foreign_key: :student_id
+  mount_uploader :photo, PhotoUploader
 end
