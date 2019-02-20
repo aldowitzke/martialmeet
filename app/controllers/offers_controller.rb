@@ -15,7 +15,7 @@ class OffersController < ApplicationController
   def new
     current_user.teacher
     @offer = Offer.new
-      # authorize access to offers/new page for all users
+    # authorize access to offers/new page for all users
     authorize @offer
   end
 
@@ -46,7 +46,11 @@ class OffersController < ApplicationController
 
   def unjoin
     @offer.update(student: nil)
-    redirect_to @offer
+    if params[:origin] == 'show'
+      redirect_to @offer
+    elsif params[:origin] == 'my_classes'
+      redirect_to student_classes_path
+    end
   end
 
   def destroy
@@ -62,6 +66,11 @@ class OffersController < ApplicationController
   def destroy_specific
     @offer.destroy
     redirect_to your_classes_path
+  end
+
+  def specific_student
+    @offers = policy_scope(Offer).where(student: current_user)
+    authorize @offers
   end
 
   private

@@ -39,6 +39,10 @@ class OfferPolicy < ApplicationPolicy
     destroy?
   end
 
+  def specific_student?
+    true
+  end
+
   def join?
     true
   end
