@@ -1,10 +1,11 @@
 <h1><%= @offer[:title] %></h1>
-<p><%= @offer[:fight_model] %></p>
-<p><%= @offer[:description] %></p>
-<p><%= @offer[:datetime] %></p>
-<p><%= @offer[:price] %></p>
-<p><%= @offer[:city] %></p>
-<p><%= @offer.teacher.email %></p>
+<p>Fight model: <%= @offer[:fight_model] %></p>
+<p>Description: <%= @offer[:description] %></p>
+<p>Date: <%= @offer[:datetime] %></p>
+<p>Price: R$<%= @offer[:price] %></p>
+<p>City: <%= @offer[:city] %></p>
+<p>Teacher email: <%= @offer.teacher.email %></p>
+<p>Teacher phone: <%= @offer.teacher.phone %></p>
 
 <% if @offer.teacher == current_user  %>
   <%= link_to edit_offer_path(@offer) do %>
