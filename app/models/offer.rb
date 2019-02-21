@@ -3,6 +3,7 @@ class Offer < ApplicationRecord
   belongs_to :teacher, class_name: 'User', foreign_key: :teacher_id
 
   validate :student_is_not_teacher
+  mount_uploader :photo, PhotoUploader
 
   private
 
