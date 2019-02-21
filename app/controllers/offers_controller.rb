@@ -13,8 +13,8 @@ class OffersController < ApplicationController
       @offers = Offer.where(sql_query, fight_model: params[:fight], city: params[:city], student: nil)
     else
       @offers = Offer.where(student: nil)
+      @users = User.all
     end
-    @users = User.all
   end
 
   def show
@@ -89,6 +89,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :fight_model, :description, :address, :datetime, :price, :student_id, :photo)
+    params.require(:offer).permit(:title, :fight_model, :description, :address, :datetime, :price, :student_id, :photo, :city)
   end
 end
