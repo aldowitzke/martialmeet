@@ -5,9 +5,15 @@ class OffersController < ApplicationController
 
   def index
     @offers = policy_scope(Offer)
-    @offers = Offer.where(student: nil)
-    # @offers = Offer.all
-    @users = User.all
+    if params[:city].present? && params[:fight].present?
+      sql_query = " \
+      offers.fight_model @@ :fight \
+      AND offers.city @@ :city \
+      "
+      @offers = Offer.where(sql_query, city: "%#{params[:city]}", fight: "%#{params[:fight]}", student: nil)
+    else
+      @offers = Offer.all
+    end
   end
 
   def show
@@ -82,6 +88,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :fight_model, :description, :address, :datetime, :price, :student_id, :photo)
+    params.require(:offer).permit(:title, :fight_model, :description, :address, :datetime, :price, :student_id, :photo, :city)
   end
 end
