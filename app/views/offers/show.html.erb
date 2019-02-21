@@ -10,6 +10,7 @@
       <p><strong>Description: </strong></p>
       <p><%= @offer[:description] %></p>
 
+
       <% if @offer.teacher == current_user  %>
       <%= link_to edit_offer_path(@offer) do %>
       <i class="fas fa-edit"></i>

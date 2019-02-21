@@ -21,7 +21,12 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-                <%= f.input :photo %>
+    <%= f.input :phone,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "phone" } %>
+
+    <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
   </div>
 
