@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_02_21_181237) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_181237) do
     t.bigint "teacher_id"
     t.bigint "student_id"
     t.string "title"
+    t.string "photo"
     t.string "city"
     t.index ["student_id"], name: "index_offers_on_student_id"
     t.index ["teacher_id"], name: "index_offers_on_teacher_id"
