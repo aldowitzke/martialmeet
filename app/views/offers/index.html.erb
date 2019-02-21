@@ -1,27 +1,19 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<div class="the-container">
-
-  <% @offers.each do |offer| %>
-  <div class="the-card">
-    <div class="title">
-      <h1><%= offer.title%></h1>
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-->
+<div class="container">
+  <div class="row">
+    <% @offers.each do |offer| %>
+    <div class="card-trip col-4" >
+  <!--     <div class="avatar"><%= cl_image_tag offer.teacher.photo%></div>
+   -->    <img class="background-image" src="<%= cl_image_path offer.photo %>" alt="">
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= offer.title %></h2>
+          <p><%= offer.fight_model %></p>
+        </div>
+        <h2>R$ <%= offer.price %></h2>
+      </div>
     </div>
-    <div>
-      <%= cl_image_tag offer.teacher.photo,
-      class: "avatar dropdown-toggle photo",
-      id: "navbar-wagon-menu",
-      "data-toggle" => "dropdown" %>
-    </div>
-    <div class="description">
-      <p><%= offer.description %></p>
-    </div>
-    <div class="price">
-      <p>R$ <%= offer.price %></p>
-    </div>
-    <div class="offer">
-      <%= link_to "Show Offer", offer_path(offer) %>
-    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
