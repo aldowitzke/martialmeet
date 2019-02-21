@@ -3,7 +3,9 @@
 <div class="the-container">
 
   <% @offers.each do |offer| %>
-  <div class="the-card">
+  <!-- <div class="the-card", style = "background-image: url('http://www.osul.com.br/wp-content/uploads/2016/12/lupulo-870x490.jpg');" > -->
+    <div class="the-card">
+      <%= cl_image_tag @offer.photo, crop: :fill %>
     <div class="title">
       <h1><%= offer.title%></h1>
     </div>
