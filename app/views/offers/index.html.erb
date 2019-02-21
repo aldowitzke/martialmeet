@@ -1,14 +1,14 @@
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
--->
+
 <div class="container">
   <div class="row">
     <% @offers.each do |offer| %>
     <div class="card-trip col-4" >
-  <!--     <div class="avatar"><%= cl_image_tag offer.teacher.photo%></div>
-   -->    <img class="background-image" src="<%= cl_image_path offer.photo %>" alt="">
+
       <div class="card-trip-infos">
         <div>
+          <%= link_to offer_path(offer) do %>
           <h2><%= offer.title %></h2>
+          <% end %>
           <p><%= offer.fight_model %></p>
         </div>
         <h2>R$ <%= offer.price %></h2>
