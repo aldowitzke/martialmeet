@@ -1,1 +1,38 @@
 // Specific CSS for your home-page
+.background-homepage {
+  background-image: url("background.jpg");
+  background-size: cover
+}
+
+.homepage-title {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 30px;
+}
+
+#search-button {
+  margin-top: 30px;
+  border-radius: 5px;
+  background-color: black;
+  &:hover {
+    background-color: white;
+    background-image: url('karate-highkick-icon.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+#all-button {
+  margin-top: 30px;
+  border-radius: 5px;
+  border-radius: 5px;
+  background-color: black;
+   &:hover {
+    background-color: white;
+    color: black;
+}
+}
+
+.search-bar {
+  height: 28px;
+}

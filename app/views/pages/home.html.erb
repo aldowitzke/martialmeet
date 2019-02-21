@@ -1,23 +1,48 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<body class="background-homepage">
+
 <div class="container">
   <div class="row">
-      <h1 class="text-center">Find the perfect martial art class!</h1>
+    <h1 class="text-center homepage-title">Find the perfect martial art class!</h1>
+
     <div class="col-md-offset-4 col-md-4">
+
+    <div class="form-inline">
 
       <%= form_tag offers_path, method: :get do %>
 
-      <%= select_tag(:city, options_for_select([[], ['São Paulo', 'São Paulo'], ['Rio de Janeiro', 'Rio de Janeiro'], ['Belo Horizonte', 'Belo Horizonte'], ['Curitiba', 'Curitiba']], 'São Paulo'), class: 'form-control') %><br>
 
-      <%= select_tag(:fight, options_for_select([[], ['Karate', 'Karate'], ['JiuJitsu', 'JiuJitsu'], ['Kickboxing', 'Kickboxing'], ['Krav Maga', 'Krav Maga'], ['Aikido', 'Aikido'], ['Wing Chun', 'Wing Chun']], 'Karate'), class: 'form-control') %><br>
+      <%= select_tag(:city, options_for_select([[], ['São Paulo', 'São Paulo'], ['Rio de Janeiro', 'Rio de Janeiro'], ['Belo Horizonte', 'Belo Horizonte'], ['Curitiba', 'Curitiba']], 'São Paulo'), class: 'form-control search-bar') %>
 
-      <%= submit_tag 'Pesquisar', class: 'btn btn-primary' %><br><br>
 
-      <%= link_to "Visualizar todas as aulas", offers_path, class: 'btn btn-primary' %>
+      <%= select_tag(:fight, options_for_select([[], ['Karate', 'Karate'], ['JiuJitsu', 'JiuJitsu'], ['Kickboxing', 'Kickboxing'], ['Krav Maga', 'Krav Maga'], ['Aikido', 'Aikido'], ['Wing Chun', 'Wing Chun']], 'Karate'), class: 'form-control search-bar') %>
+
+    </div>
+
+    <div class="text-center">
+
+      <%= submit_tag 'Search', id: 'search-button', class: 'btn btn-primary' %>
+
+
+    </div>
+
+    <div class="text-center">
+
+      <%= link_to "View all classes", offers_path, class: 'btn btn-primary', id: 'all-button' %>
 
       <% end %>
 
     </div>
+
+    </div>
   </div>
+
 </div>
+
+</body>
 
 <!-- <div class="wrap">
    <div class="search">
