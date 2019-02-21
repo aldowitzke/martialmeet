@@ -10,7 +10,7 @@ class OffersController < ApplicationController
       offers.fight_model @@ :fight \
       AND offers.city @@ :city \
       "
-      @offers = Offer.where(sql_query, city: "%#{params[:city]}", fight: "%#{params[:fight]}")
+      @offers = Offer.where(sql_query, city: "%#{params[:city]}", fight: "%#{params[:fight]}", student: nil)
     else
       @offers = Offer.all
     end
