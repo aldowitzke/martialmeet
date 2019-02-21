@@ -5,8 +5,15 @@ class OffersController < ApplicationController
 
   def index
     @offers = policy_scope(Offer)
-    @offers = Offer.where(student: nil)
-    # @offers = Offer.all
+    if params[:fight].present?
+      sql_query = " \
+      offers.fight_model @@ :fight \
+      OR offers.city @@ :city \
+      "
+      @offers = Offer.where(sql_query, fight_model: params[:fight], city: params[:city], student: nil)
+    else
+      @offers = Offer.where(student: nil)
+    end
     @users = User.all
   end
 
