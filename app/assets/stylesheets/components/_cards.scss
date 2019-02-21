@@ -1,49 +1,50 @@
-.the-card {
-  background-color: gray;
-  margin: 15px;
-  width: 35rem;
-  height: 25rem;
-  min-height: 5rem;
-  flex: 1 0 21%;
-  border-radius: 5px;
-  position: relative;
+.card-trip {
+  // align-items: center;
+  margin: 0 0 10px 10px;
+  // flex-direction: row;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 32%;
+  display: inline-block;
 }
 
-.the-container {
+.row {
+
+}
+
+.container {
   display: flex;
   flex-wrap: wrap;
 }
-.the-container h1 {
-  font-size: 30px;
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  margin-top: 20px;
+}
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+.avatar {
+
 }
 
-.title {
-  margin-left: 15px;
-  width: 60%;
+// .row {
+//   // flex-flow: row wrap;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+
+// }
+.background-image {
+
 }
 
-.description{
-  position: absolute;
-  margin-left: 15px;
-}
+.card-trip-infos {
 
-.price {
-  position: absolute;
-  bottom: 9px;
-  left:16px;
-}
-
-.offer {
-  position: absolute;
-  bottom: 20px;
-  right: 15px;
-}
-.photo {
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: block;
 }
