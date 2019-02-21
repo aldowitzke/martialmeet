@@ -5,7 +5,8 @@ miyagi = User.create!(
   name: 'Senhor Miyagi',
   teacher: true,
   email: 'miyagi@karate.com',
-  password: '123456'
+  password: '123456',
+  phone: '(14) 99789-1234'
   )
 
 daniel_san = User.create!(
@@ -23,6 +24,6 @@ Offer.create!(
     price: 200,
     teacher: miyagi,
     title: "Learn the Secrets of Bruce Lee",
-    datetime: "25/09/2018"
+    datetime: "25/09/2018",
     )
 end
