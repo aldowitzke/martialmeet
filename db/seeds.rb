@@ -19,9 +19,10 @@ daniel_san = User.create!(
 Offer.create!(
     fight_model: "Kung Fu",
     description: "Kung Fu, the Chinese martial arts, also called wushu and quanfa.",
-    address: "São Paulo",
+    address: "Mourato Coelho, 1404 - São Paulo",
     price: 200,
     teacher: miyagi,
-    title: "Learn the Secrets of Bruce Lee"
+    title: "Learn the Secrets of Bruce Lee",
+    datetime: "25/09/2018"
     )
 end
