@@ -8,6 +8,9 @@
 <p>Address: <%= offer.address %></p>
 <p>Date: <%= offer.datetime %></p>
 <p>Your price: R$<%= offer.price %></p>
+<p>Teacher: <%= offer.teacher %></p>
+<p>Phone Number: <%= offer.teacher.phone %>
+
 
 <%= link_to "Unjoin", unjoin_offer_path(offer, origin: 'my_classes'), method: :patch, data: { confirm: 'Are you sure?'} %><br><br>
 
