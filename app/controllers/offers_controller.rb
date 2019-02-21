@@ -5,15 +5,14 @@ class OffersController < ApplicationController
 
   def index
     @offers = policy_scope(Offer)
-    if params[:fight].present?
+    if params[:city].present? && params[:fight].present?
       sql_query = " \
       offers.fight_model @@ :fight \
-      OR offers.city @@ :city \
+      AND offers.city @@ :city \
       "
-      @offers = Offer.where(sql_query, fight_model: params[:fight], city: params[:city], student: nil)
+      @offers = Offer.where(sql_query, city: "%#{params[:city]}", fight: "%#{params[:fight]}")
     else
-      @offers = Offer.where(student: nil)
-      @users = User.all
+      @offers = Offer.all
     end
   end
 

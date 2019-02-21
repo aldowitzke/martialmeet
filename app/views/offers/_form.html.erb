@@ -4,9 +4,11 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.select :fight_model, ['Karate', 'JiuJitsu'] %>
+    <p>What fight model?</p>
+    <%= f.select :fight_model, ['Karate', 'Jiu-jitsu', 'Kickboxing', 'Krav Maga', 'Aikido', 'Wing Chun' ] %>
     <%= f.input :description %>
-    <%= f.select :city, ['Lisbon', 'Madrid'] %>
+    <p>What city?</p>
+    <%= f.select :city, ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Curitiba'] %>
     <%= f.input :address %>
     <%= f.input :datetime %>
     <%= f.input :price %>

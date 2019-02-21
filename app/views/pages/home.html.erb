@@ -1,24 +1,23 @@
 <div class="container">
+  <div class="row">
+      <h1 class="text-center">Find the perfect martial art class!</h1>
+    <div class="col-md-offset-4 col-md-4">
 
-  <h1>Find the perfect martial art class!</h1>
+      <%= form_tag offers_path, method: :get do %>
 
+      <%= select_tag(:city, options_for_select([[], ['São Paulo', 'São Paulo'], ['Rio de Janeiro', 'Rio de Janeiro'], ['Belo Horizonte', 'Belo Horizonte'], ['Curitiba', 'Curitiba']], 'São Paulo'), class: 'form-control') %><br>
 
+      <%= select_tag(:fight, options_for_select([[], ['Karate', 'Karate'], ['JiuJitsu', 'JiuJitsu'], ['Kickboxing', 'Kickboxing'], ['Krav Maga', 'Krav Maga'], ['Aikido', 'Aikido'], ['Wing Chun', 'Wing Chun']], 'Karate'), class: 'form-control') %><br>
 
+      <%= submit_tag 'Pesquisar', class: 'btn btn-primary' %><br><br>
 
+      <%= link_to "Visualizar todas as aulas", offers_path, class: 'btn btn-primary' %>
 
-  <%= form_tag offers_path, method: :get do %>
+      <% end %>
 
-    <%= select_tag(:city, options_for_select([['Lisbon', 'Lisbon'], ['Madrid', 'Madrid']], 'Madrid'), class: 'form-control') %>
-
-    <%= select_tag(:fight, options_for_select([['Karate', 'Karate'], ['JiuJitsu', 'JiuJitsu']], 'Karate'), class: 'form-control') %>
-
-    <%= submit_tag 'Pesquisar' %>
-
-  <% end %>
-
+    </div>
+  </div>
 </div>
-
-
 
 <!-- <div class="wrap">
    <div class="search">
