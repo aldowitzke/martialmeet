@@ -1,21 +1,37 @@
-<div class="background">
 
-<h1>Your classes!</h1>
-
-<% @offers.each do |offer| %>
-<%= link_to offer.title, offer_path(offer) %>
-<!-- <h3><%= offer.title%></h3> -->
-<p>Fight mode: <%= offer.fight_model %>
-<p>Description: <%= offer.description %></p>
-<p>Address: <%= offer.address %></p>
-<p>Date: <%= offer.datetime %></p>
-<p>Your price: R$<%= offer.price %></p>
-<p>Teacher: <%= offer.teacher %></p>
-<p>Phone Number: <%= offer.teacher.phone %>
-
-
-<%= link_to "Unjoin", unjoin_offer_path(offer, origin: 'my_classes'), method: :patch, data: { confirm: 'Are you sure?'} %><br><br>
-
-<% end %>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+  <div class="row">
+    <% @offers.each do |offer| %>
+    <div class="card-myclasses col-4" >
+      <% if offer.photo_url %>
+      <img class="background-image" src="<%= cl_image_path offer.photo %>" alt="">
+      <% else %>
+      <div class="white-background">
+      </div>
+      <% end %>
+      <div class="card-myclasses-infos">
+        <div class="main-info">
+          <h2><%= offer.title %></h2>
+          <p><%= offer.fight_model %></p>
+        </div>
+        <div class="price">
+         <h2>R$ <%= offer.price %></h2>
+       </div>
+       <div class="offer">
+        <%= link_to "Show Offer !", offer_path(offer) %>
+      </div>
+      <div class="student-info">
+        <% if offer.student %>
+        <p>Teacher: <%= offer.teacher.name %>
+          <p>Phone: <%= offer.teacher.phone %></p>
+          <p>E-mail: <%= offer.teacher.email %></p>
+          <% else %>
+          <p>You don't have any student yet</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
