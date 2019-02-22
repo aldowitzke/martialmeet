@@ -2,6 +2,7 @@
 <div class="container">
   <div class="row">
     <% @offers.each do |offer| %>
+          <%= link_to offer_path(offer) do %>
     <div class="card-trip col-4" >
 <!--      <img class="card-user" src="<%= cl_image_tag offer.teacher.photo %>">
  -->    <% if offer.photo_url %>
@@ -13,16 +14,16 @@
       <div class="card-trip-infos">
         <div class="main-info">
           <h2><%= offer.title %></h2>
-          <p><%= offer.fight_model %></p>
+          <p>Type of Class: <%= offer.fight_model %></p>
         </div>
         <div class="price">
          <h2>R$ <%= offer.price %></h2>
         </div>
         <div class="offer">
-          <%= link_to "Show Offer !", offer_path(offer) %>
         </div>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>
