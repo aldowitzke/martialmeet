@@ -1,4 +1,7 @@
 .background {
-  background: asset-url('old_paper.jpg');
-  background-size: cover;
+background: #fbf8f1; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, #fbf8f1 0%, #d7b87b 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, #fbf8f1 0%,#d7b87b 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, #fbf8f1 0%,#d7b87b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbf8f1', endColorstr='#d7b87b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
