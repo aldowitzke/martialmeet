@@ -1,46 +1,46 @@
 <div class="background">
-<div class="container">
-  <div class="buttons-card">
-    <div class="row">
-      <div class="col-xs-12">
-        <%= offer_status_icon %>
-        <% if @offer.teacher == current_user %>
-        <%= link_to "Edit", edit_offer_path(@offer), class: "btn btn-success", id: "edit-button" %>
-        <%= link_to "Delete", edit_offer_path(@offer), class: "btn btn-danger", id: "delete-button" %>
-        <% end %>
+  <div class="container">
+    <div class="buttons-card">
+      <div class="row">
+        <div class="col-xs-12">
+          <%= offer_status_icon %>
+          <% if @offer.teacher == current_user %>
+          <%= link_to "Edit", edit_offer_path(@offer), class: "btn btn-success", id: "edit-button" %>
+          <%= link_to "Delete", edit_offer_path(@offer), class: "btn btn-danger", id: "delete-button" %>
+          <% end %>
 
 
-        <% if @offer.student == current_user %>
-        <%= link_to "Unjoin Class", unjoin_offer_path(@offer, origin: 'show'), class: "btn btn-danger", method: :patch %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="my-card text-center">
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <p><%= @offer[:datetime].strftime('%d/%m/%Y') %></p>
-        <h1><%= @offer[:title] %></h1>
-        <h2><%= @offer[:fight_model] %></h2>
-        <p><strong>By </strong><%= @offer.teacher.name %>
-          <p>phone: <%=@offer.teacher.phone%></p>
-          <p>mail: <%=@offer.teacher.email%></p>
-          <p><strong>Price  </strong>U$ <%= @offer[:price] %></p>
-          <p><strong>At </strong><%= @offer[:address] %></p>
-          <p><strong>Description </strong></p>
-          <p><%= @offer[:description] %></p>
-
-        </div>
-
-        <div class="col-xs-12 col-md-6">
-          <% if @offer.photo_url %>
-          <img class="background-image" src="<%= cl_image_path @offer.photo %>" alt="">
-          <% else %>
-          <div class="white-background">
-          </div>
+          <% if @offer.student == current_user %>
+          <%= link_to "Unjoin Class", unjoin_offer_path(@offer, origin: 'show'), class: "btn btn-danger", method: :patch %>
           <% end %>
         </div>
       </div>
     </div>
-  </div>
+    <div class="my-card text-center">
+      <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <p><%= @offer[:datetime].strftime('%d/%m/%Y') %></p>
+            <h1><%= @offer[:title] %></h1>
+            <h2><%= @offer[:fight_model] %></h2>
+            <p><strong>By </strong><%= @offer.teacher.name %>
+              <p>phone: <%=@offer.teacher.phone%></p>
+              <p>mail: <%=@offer.teacher.email%></p>
+              <p><strong>Price  </strong>U$ <%= @offer[:price] %></p>
+              <p><strong>At </strong><%= @offer[:address] %></p>
+              <p><strong>Description </strong></p>
+              <p><%= @offer[:description] %></p>
+
+            </div>
+
+          <div class="col-xs-12 col-md-6">
+            <% if @offer.photo_url %>
+            <img class="background-image" src="<%= cl_image_path @offer.photo %>" alt="">
+            <% else %>
+            <div class="white-background">
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
