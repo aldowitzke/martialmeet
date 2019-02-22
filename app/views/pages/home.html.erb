@@ -16,10 +16,10 @@
         <%= form_tag offers_path, method: :get do %>
 
 
-        <%= select_tag(:city, options_for_select([[], ['São Paulo', 'São Paulo'], ['Rio de Janeiro', 'Rio de Janeiro'], ['Belo Horizonte', 'Belo Horizonte'], ['Curitiba', 'Curitiba']], 'São Paulo'), class: 'form-control search-bar') %>
+        <%= select_tag(:city, options_for_select([[], ['Aracaju', 'Aracaju'], ['Belo Horizonte', 'Belo Horizonte'], ['Belém', 'Bélem'], ['Boa Vista', 'Boa Vista'], ['Brasília', 'Brasília'], ['Campo Grande', 'Campo Grande'], ['Cuiabá', 'Cuiabá'], ['Curitiba', 'Curitiba'], ['Florianópolis', 'Florianópolis'], ['Fortaleza', 'Fortaleza'], ['Goiânia', 'Goiânia'], ['João Pessoa', 'João Pessoa'], ['Macapá', 'Macapá'], ['Maceió', 'Maceió'], ['Manaus', 'Manaus'], ['Natal', 'Natal'], ['Palmas', 'Palmas'], ['Porto Alegre', 'Porto Alegre'], ['Recife', 'Recife'], ['Rio Branco', 'Rio Branco'], ['Rio de Janeiro', 'Rio de Janeiro'], ['Salvador', 'Salvador'], ['São Luís', 'São Luís'], ['São Paulo', 'São Paulo'], ['Teresina', 'Teresina'], ['Vitória', 'Vitória']], 'São Paulo'), class: 'form-control search-bar') %>
 
 
-        <%= select_tag(:fight, options_for_select([[], ['Karate', 'Karate'], ['JiuJitsu', 'JiuJitsu'], ['Kickboxing', 'Kickboxing'], ['Krav Maga', 'Krav Maga'], ['Aikido', 'Aikido'], ['Wing Chun', 'Wing Chun']], 'Karate'), class: 'form-control search-bar') %>
+        <%= select_tag(:fight, options_for_select([[],  ['Aikido', 'Aikido'], ['JiuJitsu', 'JiuJitsu'], ['Karate', 'Karate'], ['Kickboxing', 'Kickboxing'], ['Krav Maga', 'Krav Maga'], ['Muay Thai', 'Muay Thai'],  ['Wing Chun', 'Wing Chun']], 'Karate'), class: 'form-control search-bar') %>
 
       </div>
 
