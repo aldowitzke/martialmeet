@@ -55,7 +55,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-
+}
 
 .card-user {
   position: absolute;
@@ -81,3 +81,36 @@
 .white-background {
   background-color: white;
 }
+
+// COMECO DO MY CLASSES
+
+.student-info {
+  position: absolute;
+  top: 80px;
+  margin-top: 8px;
+  left: 16px;
+}
+
+.card-myclasses {
+  min-width: 200px;
+  min-height: 450px;
+  margin: 0 0 10px 10px;
+  // flex-direction: row;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 32%;
+  display: inline-block;
+}
+
+.card-myclasses .card-myclasses-infos {
+  max-height: 100px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+
+
