@@ -1,15 +1,15 @@
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="container">
   <div class="row">
     <% @offers.each do |offer| %>
     <div class="card-myclasses col-4" >
-<!--      <img class="card-user" src="<%= cl_image_tag offer.teacher.photo %>">
- -->    <% if offer.photo_url %>
+      <% if offer.photo_url %>
       <img class="background-image" src="<%= cl_image_path offer.photo %>" alt="">
-    <% else %>
+      <% else %>
       <div class="white-background">
       </div>
-    <% end %>
+      <% end %>
       <div class="card-myclasses-infos">
         <div class="main-info">
           <h2><%= offer.title %></h2>
@@ -17,17 +17,17 @@
         </div>
         <div class="price">
          <h2>R$ <%= offer.price %></h2>
-        </div>
-        <div class="offer">
-          <%= link_to "Show Offer !", offer_path(offer) %>
-        </div>
-        <div class="student-info">
-          <% if offer.student %>
-            <p>Teacher: <%= offer.teacher.name %>
-            <p>Phone: <%= offer.teacher.phone %></p>
-            <p>E-mail: <%= offer.teacher.email %></p>
+       </div>
+       <div class="offer">
+        <%= link_to "Show Offer !", offer_path(offer) %>
+      </div>
+      <div class="student-info">
+        <% if offer.student %>
+        <p>Teacher: <%= offer.teacher.name %>
+          <p>Phone: <%= offer.teacher.phone %></p>
+          <p>E-mail: <%= offer.teacher.email %></p>
           <% else %>
-            <p>You don't have any student yet</p>
+          <p>You don't have any student yet</p>
           <% end %>
         </div>
       </div>
@@ -35,37 +35,3 @@
     <% end %>
   </div>
 </div>
-
-
-
-<!-- <h1>Your classes!</h1>
-
-<% @offers.each do |offer| %>
-
-<%= link_to offer_path(offer) do %>
-<% offer.title %>
-<% end %>
-
-<p>Fight mode: <%= offer.fight_model %>
-<p>Description: <%= offer.description %></p>
-<p>Address: <%= offer.address %></p>
-<p>Date: <%= offer.datetime %></p>
-<p>Your price: R$<%= offer.price %></p>
-
-<% if offer.student %>
-  <p>Your student: <%= offer.student.name %>
-  <p>Student's email: <%= offer.student.email %></p>
-<% end %>
-
-<%= link_to edit_offer_path(offer) do %>
-  <i class="fas fa-edit"></i>
-<% end %>
-
-<%= link_to destroy_specific_path(offer), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } do %>
-    <i class="fas fa-trash-alt"></i>
-<% end %>
-
-<% end %> -->
-
-
-
