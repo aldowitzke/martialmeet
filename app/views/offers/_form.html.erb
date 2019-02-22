@@ -1,23 +1,37 @@
-<%= simple_form_for(@offer) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="container">
+  <div class="col-sm-offset-3 col-sm-6">
+    <div class="row">
+      <div class="text-center">
+        <h2>Your class, sensei!</h2>
+      </div>
+      <%= simple_form_for(@offer) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <p>What fight model?</p>
-    <%= f.select :fight_model, ['Karate', 'Jiu-jitsu', 'Kickboxing', 'Krav Maga', 'Aikido', 'Wing Chun' ] %>
-    <%= f.input :description %>
-    <p>What city?</p>
-    <%= f.select :city, ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Curitiba'] %>
-    <%= f.input :address %>
-    <%= f.input :datetime, :as => :string, :input_html => { :class => 'date_picker' } %>
+      <div class="form-inputs">
+        <%= f.input :title %>
+        <div class="text-center">
+          <p>What fight model?</p>
+          <%= f.select :fight_model, ['Karate', 'Jiu-jitsu', 'Kickboxing', 'Krav Maga', 'Aikido', 'Wing Chun' ] %>
+          <p>What city?</p>
+          <%= f.select :city, ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Curitiba'] %>
+        </div>
+        <%= f.input :description %>
+        <%= f.input :address %>
+        <%= f.input :datetime %>
+        <%= f.input :price %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+      </div>
+      <div class="text-center">
 
-    <%= f.input :price %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      </div>
+
+      <% end %>
+    </div>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
