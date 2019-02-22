@@ -10,7 +10,7 @@
           <% end %>
 
 
-          <% if @offer.student == current_user %>
+          <% if @offer.student == current_user && user_signed_in? %>
           <%= link_to "Unjoin Class", unjoin_offer_path(@offer, origin: 'show'), class: "btn btn-danger", method: :patch %>
           <% end %>
         </div>
