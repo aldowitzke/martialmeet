@@ -1,19 +1,19 @@
-
-<div class="container">
-  <div class="row">
-    <% @offers.each do |offer| %>
-    <div class="card-trip col-4" >
-
-      <div class="card-trip-infos">
-        <div>
-          <%= link_to offer_path(offer) do %>
-          <h2><%= offer.title %></h2>
-          <% end %>
-          <p><%= offer.fight_model %></p>
+<div class="background">
+  <div class="container">
+    <div class="row">
+      <% @offers.each do |offer| %>
+      <div class="card-trip col-4" >
+        <div class="card-trip-infos">
+          <div>
+            <%= link_to offer_path(offer) do %>
+            <h2><%= offer.title %></h2>
+            <% end %>
+            <p><%= offer.fight_model %></p>
+          </div>
+          <h2>R$ <%= offer.price %></h2>
         </div>
-        <h2>R$ <%= offer.price %></h2>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
