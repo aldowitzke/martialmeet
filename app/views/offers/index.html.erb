@@ -1,23 +1,26 @@
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
--->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="container">
   <div class="row">
     <% @offers.each do |offer| %>
     <div class="card-trip col-4" >
-  <!--     <div class="avatar"><%# cl_image_tag offer.teacher.photo%></div>
-   -->
-    <% if offer.photo_url %>
+<!--      <img class="card-user" src="<%= cl_image_tag offer.teacher.photo %>">
+ -->    <% if offer.photo_url %>
       <img class="background-image" src="<%= cl_image_path offer.photo %>" alt="">
     <% else %>
       <div class="white-background">
       </div>
     <% end %>
       <div class="card-trip-infos">
-        <div>
+        <div class="main-info">
           <h2><%= offer.title %></h2>
           <p><%= offer.fight_model %></p>
         </div>
-        <h2>R$ <%= offer.price %></h2>
+        <div class="price">
+         <h2>R$ <%= offer.price %></h2>
+        </div>
+        <div class="offer">
+          <%= link_to "Show Offer !", offer_path(offer) %>
+        </div>
       </div>
     </div>
     <% end %>
